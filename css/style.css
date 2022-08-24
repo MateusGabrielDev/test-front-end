@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +5,29 @@
 }
 
 body {
+  font-family: 'Roboto';
   background-color: #E5E5E5;
+  overflow: hidden;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 60px;
   background-color: white;
-  box-shadow: #E5E5E5;
+  border: 1px solid #dbd8d8;
 }
 
-button {
+#newTicket {
   background: #4C12A1;
   width: 133px;
   height: 40px;
   border-radius: 20px;
+  border: none;
+  cursor: pointer;
 }
 
-.bi,
 .bi-plus-lg {
   height: 20px;
   width: 20px;
@@ -47,80 +49,146 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 60px;
-
+  column-gap: 4rem;
 }
 
-#ticket1 {
+.ticket {
   height: 80vh;
-  width: 20vw;
   border-radius: 8px;
   background-color: white;
 }
 
-.abertos {
+.ticket-title {
   width: 100%;
   height: 3rem;
-  background: rgb(245, 34, 45, 0.25);
   border-radius: 8px 8px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-left: 1rem;
-  font-family: 'Roboto';
-  font-style: medium;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.25px;
+}
+
+.abertos {
+  background: rgb(245, 34, 45, 0.25);
 }
 
 .executados {
-  width: 100%;
-  height: 3rem;
   background: rgba(248, 216, 199, 1);
-  border-radius: 8px 8px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 1rem;
-  font-family: 'Roboto';
-  font-style: medium;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.25px;
 }
 
 .vistoriados {
-  width: 100%;
-  height: 3rem;
   background: rgb(82, 196, 26, 0.25);
-  border-radius: 8px 8px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 1rem;
-  font-family: 'Roboto';
-  font-style: medium;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.25px;
 }
 
 .arquivados {
-  width: 100%;
-  height: 3rem;
   background: rgb(193, 185, 185, 0.25);
-  border-radius: 8px 8px 0px 0px;
+}
+
+.modal {
+  visibility: hidden;
+  background-color: #00000050;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Inter" !important;
+  font-weight: 400;
+}
+
+.modal-container {
+  background-color: white;
+  position: relative;
+  margin: 10% auto;
+  width: 24rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.modal-container .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #C1B9B9;
+}
+
+.modal-container .modal-header button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+
+.form-input label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.form-input label span {
+  color: red;
+}
+
+.form-input input,
+.form-input select {
+  margin-top: 8px;
+  height: 2rem;
+  outline: none;
+  border: 1px solid #D9D9D9;
+  border-radius: 4px;
+}
+
+#importImgLabel {
+  width: 22rem;
+  height: 6.8rem;
+
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.43);
+
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px dashed rgba(0, 0, 0, 0.09);
+}
+
+.importFile-content {
+  margin: auto 0;
+  text-align: center;
+}
+
+#importImgLabel .importFile-content img {
+  max-width: 2.5rem;
+}
+
+.form-input input[type="file"] {
+  display: none;
+}
+
+.modal-content .form-buttons {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 1rem;
-  font-family: 'Roboto';
-  font-style: medium;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.25px;
+  justify-content: flex-end;
+}
+
+.modal-content .form-buttons button {
+  margin: 1rem;
+  background: #4C12A1;
+  border-radius: 20px;
+  color: white;
+  padding: .3rem .5rem;
+  border: none;
+  cursor: pointer;
 }
